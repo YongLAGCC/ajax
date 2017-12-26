@@ -19,8 +19,7 @@ $(function(){
             <button data-id=${order.id} class='remove'>X</button>
             <button class='editOrder noedit'>Edit</button>
             <button class='cancelEdit edit'>Cancel</button>
-            <button class='saveEdit edit'>Save</button>
-            
+            <button class='saveEdit edit'>Save</button>          
             
             </li>`)
     }
@@ -91,17 +90,26 @@ $(function(){
         var li=$(this).closest('li');
        
    })
-   $("#orders").deldgate('saveEdit', 'click',function(){
+   $("#orders").delegate('saveEdit', 'click',function(){
        li = $(this).closest('li');
        var order = {
         name: li.find('input.name').val(), 
         birthday: li.find('input.birthday').val(), 
        };
        $.ajax({
-           type: PUT, 
-           url: 'http://rest.learncode.academy/api/Yong1/friends',
-           
-           
+            type: PUT, 
+            url: 'http://rest.learncode.academy/api/Yong1/friends/'+li.attr('data-id'),
+            data:order, 
+            success: function() {
+                li.find('span.name').html(order.name); 
+                li.find('span.birthday').html(order.birthday); 
+                li.removeClass('edit'); 
+                console.log(order.birthday); 
+            
+            },
+           error: function(){
+               alert('error saving info'); 
+           }
        })
    })
   
