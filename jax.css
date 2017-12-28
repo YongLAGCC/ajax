@@ -1,0 +1,57 @@
+body {
+    margin: 0; 
+}
+nav {
+    background-color:lightblue; 
+    color: black; 
+    padding: 15px 0; 
+}
+nav .brandLogo{
+    font-size: 1.25rem; 
+    font-family: sans-serif;
+    padding-left: 10%;
+}
+
+nav ul li{
+    display: inline;
+    padding-right: 20px; 
+
+    
+}
+nav .firstContainer.brandAdd{
+    size: 2rem;   
+}
+ nav ul{
+     display: inline; 
+     padding-right: right;  
+ }
+
+ header button{
+     margin-left: 18px; 
+     background-color: rgb(138, 177, 139); 
+     border: none;
+     color: white;
+     padding: 5px 3px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: px;
+     
+ }
+ .container ul{
+    list-style: none; 
+ }
+ .container  ul li{
+     background-color: lightgray;
+     margin-bottom: 4px; 
+     
+ }
+ul li .edit{
+    display: none; 
+}
+ul li.edit .edit{
+    display: initial; 
+}
+ul li.edit .noedit{
+    display: none; 
+}
